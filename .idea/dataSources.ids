@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - test@localhost" uuid="9a131efd-5aa4-41d6-8694-3641dee8d081">
+    <database-info product="MySQL" version="5.5.40" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="test"/>
+    <table name="t_dept" schema="" catalog="test" type="TABLE">
+      <column name="t_dept_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="t_dept_description" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="t_dept_id"/>
+      <exported-key name="fk_deptid" table="t_user" schema="" catalog="test" columns="t_user_deptid"/>
+    </table>
+    <table name="t_user" schema="" catalog="test" type="TABLE">
+      <column name="t_user_it" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="t_user_firstname" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="t_user_lastname" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="t_user_username" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="t_user_password" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="t_user_deptid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="t_user_it"/>
+      <foreign-key name="fk_deptid" columns="t_user_deptid" ref-table="t_dept" ref-schema="" ref-catalog="test" ref-columns="t_dept_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="t_user_deptidx" unique="false" columns="t_user_deptid"/>
+    </table>
+  </data-source>
+</component>
